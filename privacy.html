@@ -2,145 +2,320 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kest — Política de Privacidade</title>
+    <meta name="description"
+        content="Política de Privacidade oficial do Kest. Saiba como o aplicativo trata armazenamento local, notificações, backup, segurança e compras no app." />
 
     <style>
+        :root {
+            --bg: #06080b;
+            --panel: rgba(18, 24, 31, 0.92);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(0, 229, 188, 0.28);
+            --text: #eaf0f5;
+            --muted: #a0abbb;
+            --soft: #728093;
+            --mint: #00e5bc;
+            --mint-soft: rgba(0, 229, 188, 0.08);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
         body {
-            font-family: -apple-system, sans-serif;
-            line-height: 1.6;
-            color: #AAA;
-            background: #050505;
-            padding: 40px 20px;
-            max-width: 720px;
+            margin: 0;
+            min-height: 100%;
+            background:
+                radial-gradient(circle at top right, rgba(0, 229, 188, 0.10), transparent 26%),
+                var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+        }
+
+        body {
+            padding: 28px 18px 60px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 860px;
             margin: 0 auto;
         }
 
-        h1,
-        h2 {
-            color: #00FFCC;
-            font-family: monospace;
+        .top-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            color: var(--mint);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .top-link:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 34px 24px 28px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border-strong);
+            background: var(--mint-soft);
+            color: var(--mint);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
         h1 {
-            border-bottom: 1px solid #1A1A1A;
-            padding-bottom: 20px;
-            font-size: 1.8rem;
+            margin: 0 0 10px;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
         }
 
-        h2 {
-            margin-top: 40px;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
+        .updated {
+            color: var(--soft);
+            font-size: 0.92rem;
+            margin-bottom: 24px;
+        }
+
+        p {
+            margin: 0 0 16px;
+            color: var(--muted);
+            line-height: 1.75;
+            font-size: 1rem;
         }
 
         strong {
-            color: #FFF;
+            color: var(--text);
         }
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #00FFCC;
-            text-decoration: none;
-            font-family: monospace;
-            font-size: 0.8rem;
+        h2 {
+            margin: 34px 0 12px;
+            font-size: 1.02rem;
+            color: var(--mint);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        ul {
+            margin: 0 0 18px 20px;
+            padding: 0;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        li+li {
+            margin-top: 8px;
+        }
+
+        .notice {
+            margin-top: 26px;
+            padding: 18px;
+            border-radius: 18px;
+            border: 1px solid var(--border-strong);
+            background: rgba(0, 229, 188, 0.05);
+        }
+
+        .notice p:last-child {
+            margin-bottom: 0;
         }
 
         .contact {
-            background: #121212;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #00FFCC;
-            color: #E0E0E0;
-            font-family: monospace;
-            margin-top: 40px;
+            margin-top: 34px;
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        .contact a {
+            color: var(--mint);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 26px 18px 22px;
+                border-radius: 24px;
+            }
+
+            p,
+            ul {
+                font-size: 0.96rem;
+            }
         }
     </style>
 </head>
 
 <body>
+    <main class="page">
+        <a class="top-link" href="index.html">← Voltar</a>
 
-    <a href="index.html" class="back-link">← VOLTAR</a>
+        <section class="card">
+            <div class="eyebrow">Kest Privacy</div>
+            <h1>Política de Privacidade</h1>
+            <div class="updated">Última atualização: Abril de 2026</div>
 
-    <h1>Privacy Policy_</h1>
+            <p>
+                O <strong>Kest</strong> foi desenvolvido com uma abordagem <strong>local-first</strong>.
+                Isso significa que, como regra geral, os dados financeiros e recorrências inseridos pelo usuário
+                permanecem armazenados no próprio dispositivo.
+            </p>
 
-    <p>Última atualização: Março de 2026</p>
+            <p>
+                Esta Política de Privacidade explica como o aplicativo trata informações, permissões do sistema,
+                recursos de segurança, notificações e operações locais de backup.
+            </p>
 
-    <p>
-        O <strong>Kest</strong> foi desenvolvido com o princípio de <strong>Privacy First</strong>.
-        Esta Política de Privacidade explica como as informações são tratadas dentro do aplicativo.
-    </p>
+            <h2>1. Dados tratados pelo aplicativo</h2>
+            <p>
+                O Kest pode tratar informações fornecidas diretamente pelo usuário, como nome de serviços,
+                categorias, valores, datas, ciclos de cobrança, períodos de teste, preferências do aplicativo
+                e demais dados necessários para o funcionamento das análises e lembretes.
+            </p>
+            <p>
+                O Kest <strong>não utiliza backend próprio para armazenar os dados financeiros inseridos pelo usuário</strong>.
+                As informações registradas no app são processadas principalmente no próprio dispositivo.
+            </p>
 
-    <h2>1. Informações Coletadas</h2>
+            <h2>2. Armazenamento local</h2>
+            <p>
+                Os dados cadastrados no Kest são armazenados localmente no dispositivo do usuário,
+                por meio de banco de dados interno e recursos locais de persistência.
+            </p>
+            <p>
+                Isso inclui, entre outros, recorrências cadastradas, preços, histórico local de valores,
+                configurações do app, preferências de segurança e dados necessários para cálculos de projeção,
+                insights e notificações.
+            </p>
 
-    <p>
-        O Kest não coleta, armazena ou transmite dados pessoais identificáveis para servidores externos.
-        Todas as informações inseridas pelo usuário permanecem exclusivamente no dispositivo.
-    </p>
+            <h2>3. Permissões do aplicativo</h2>
+            <p>
+                O Kest pode solicitar permissões limitadas do sistema operacional para oferecer funcionalidades específicas.
+                No estado atual do aplicativo, isso inclui:
+            </p>
+            <ul>
+                <li><strong>Internet</strong>, para funcionalidades operacionais compatíveis com a plataforma de distribuição, recursos ligados à loja e operações relacionadas ao app quando aplicável.</li>
+                <li><strong>Notificações</strong>, para alertas locais sobre cobranças, testes terminando, lembretes e outros avisos relevantes do aplicativo.</li>
+            </ul>
+            <p>
+                O usuário pode negar permissões opcionais, observadas as limitações naturais de funcionamento
+                dos recursos que dependam delas.
+            </p>
 
-    <h2>2. Armazenamento Local</h2>
+            <h2>4. Notificações</h2>
+            <p>
+                O Kest pode solicitar a permissão de notificações para exibir alertas locais sobre
+                vencimentos, períodos de teste, cobranças próximas, lembretes e outros eventos relacionados
+                aos dados cadastrados no aplicativo.
+            </p>
+            <p>
+                Essas notificações são geradas com base nas informações armazenadas localmente no dispositivo.
+                O usuário pode desativá-las a qualquer momento nas configurações do sistema operacional.
+            </p>
 
-    <p>
-        Os dados inseridos no aplicativo (assinaturas, valores, datas e categorias) são armazenados
-        localmente no dispositivo utilizando banco de dados interno baseado em SQLite.
-        Nenhuma informação é enviada para servidores externos.
-    </p>
+            <h2>5. Segurança do app e autenticação do dispositivo</h2>
+            <p>
+                O Kest pode oferecer recursos de proteção de acesso ao aplicativo, inclusive mecanismos de segurança
+                mediados pelo próprio sistema operacional do dispositivo.
+            </p>
+            <p>
+                Quando o usuário utiliza biometria, PIN, senha ou outro método nativo do aparelho para proteger o acesso,
+                essa validação é realizada pelo sistema do dispositivo. O Kest <strong>não coleta, não armazena e não tem acesso
+                aos dados biométricos</strong> do usuário.
+            </p>
+            <p>
+                A segurança geral das informações também depende da proteção do próprio aparelho, incluindo senha,
+                bloqueio de tela, biometria e demais recursos disponibilizados pelo sistema operacional.
+            </p>
 
-    <h2>3. Permissões do Aplicativo</h2>
+            <h2>6. Backup, exportação e importação</h2>
+            <p>
+                O Kest pode oferecer recursos de exportação, importação e compartilhamento de backup local
+                para facilitar a movimentação de dados entre dispositivos ou a guarda pessoal das informações.
+            </p>
+            <p>
+                Quando o usuário gera, importa ou compartilha arquivos de backup, essas operações são realizadas localmente,
+                com arquivos escolhidos ou manipulados pelo próprio usuário.
+            </p>
+            <p>
+                O usuário é responsável pela guarda, proteção, envio, armazenamento e confidencialidade
+                desses arquivos fora do aplicativo.
+            </p>
 
-    <p>
-        O aplicativo pode solicitar permissões limitadas do sistema operacional apenas para
-        funcionalidades essenciais, como autenticação biométrica ou notificações locais.
-        Essas permissões são utilizadas exclusivamente dentro do dispositivo.
-    </p>
+            <h2>7. Compras dentro do aplicativo</h2>
+            <p>
+                O Kest pode oferecer funcionalidades premium por meio de compras dentro do aplicativo.
+                Essas transações são processadas pelas plataformas oficiais, como Google Play ou App Store,
+                conforme as regras e políticas dessas lojas.
+            </p>
+            <p>
+                O Kest não recebe nem armazena dados completos de pagamento do usuário, como número de cartão
+                ou credenciais financeiras sensíveis.
+            </p>
 
-    <h2>4. Autenticação Biométrica</h2>
+            <h2>8. Uso de internet</h2>
+            <p>
+                Embora o Kest tenha uma arquitetura prioritariamente local, o aplicativo pode utilizar acesso à internet
+                para funcionalidades relacionadas à plataforma, à distribuição do app, a compras no aplicativo
+                e a componentes compatíveis com esse ecossistema.
+            </p>
+            <p>
+                Isso não significa que os dados financeiros cadastrados no aplicativo sejam enviados para um backend próprio do Kest.
+            </p>
 
-    <p>
-        Caso o usuário utilize autenticação biométrica (Face ID ou impressão digital),
-        essa verificação é processada inteiramente pelo sistema operacional do dispositivo.
-        O Kest não coleta, armazena ou possui acesso aos dados biométricos do usuário.
-    </p>
+            <h2>9. Privacidade de crianças</h2>
+            <p>
+                O Kest não é direcionado a crianças menores de 13 anos e não é desenvolvido com foco em coleta
+                deliberada de dados pessoais dessa faixa etária.
+            </p>
 
-    <h2>5. Compras dentro do Aplicativo</h2>
+            <h2>10. Alterações desta Política</h2>
+            <p>
+                Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças legais,
+                melhorias no aplicativo ou ajustes operacionais. A data de atualização será sempre exibida nesta página.
+            </p>
 
-    <p>
-        O Kest pode oferecer recursos premium através de compras dentro do aplicativo.
-        Todos os pagamentos são processados pelas plataformas oficiais de distribuição,
-        como Google Play ou Apple App Store.
-        O Kest não tem acesso a informações de pagamento ou dados financeiros do usuário.
-    </p>
+            <div class="notice">
+                <p>
+                    <strong>Resumo importante:</strong> o Kest foi projetado para operar com os dados do usuário
+                    principalmente no próprio dispositivo, com foco em privacidade, controle local e transparência
+                    sobre permissões e recursos utilizados.
+                </p>
+            </div>
 
-    <h2>6. Segurança</h2>
-
-    <p>
-        Como os dados são armazenados apenas no dispositivo, a segurança das informações
-        depende principalmente da proteção do próprio aparelho.
-        Recomendamos o uso de senha, biometria ou outros mecanismos de proteção disponíveis no sistema.
-    </p>
-
-    <h2>7. Privacidade de Crianças</h2>
-
-    <p>
-        O Kest não é direcionado a crianças menores de 13 anos.
-        O aplicativo não coleta dados pessoais de usuários dessa faixa etária.
-    </p>
-
-    <h2>8. Alterações nesta Política</h2>
-
-    <p>
-        Esta Política de Privacidade pode ser atualizada periodicamente para refletir melhorias
-        no aplicativo ou alterações legais. A data da última atualização será sempre exibida nesta página.
-    </p>
-
-    <div class="contact">
-        Contato: touchapps.it@gmail.com
-    </div>
-
+            <div class="contact">
+                <strong>Contato</strong><br />
+                Em caso de dúvidas sobre esta Política de Privacidade, entre em contato por:
+                <a href="mailto:touchapps.it@gmail.com">touchapps.it@gmail.com</a>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

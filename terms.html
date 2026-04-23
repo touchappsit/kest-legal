@@ -2,154 +2,306 @@
 <html lang="pt-BR">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kest — Termos de Uso</title>
+    <meta name="description"
+        content="Termos de Uso oficiais do Kest. Consulte regras de uso, recursos premium, notificações, segurança, backups e limitações do aplicativo." />
 
     <style>
+        :root {
+            --bg: #06080b;
+            --panel: rgba(18, 24, 31, 0.92);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(0, 229, 188, 0.28);
+            --text: #eaf0f5;
+            --muted: #a0abbb;
+            --soft: #728093;
+            --mint: #00e5bc;
+            --mint-soft: rgba(0, 229, 188, 0.08);
+            --warn: #f4be62;
+            --warn-bg: rgba(244, 190, 98, 0.08);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
         body {
-            font-family: -apple-system, sans-serif;
-            line-height: 1.6;
-            color: #AAA;
-            background: #050505;
-            padding: 40px 20px;
-            max-width: 720px;
+            margin: 0;
+            min-height: 100%;
+            background:
+                radial-gradient(circle at top right, rgba(0, 229, 188, 0.10), transparent 26%),
+                var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+        }
+
+        body {
+            padding: 28px 18px 60px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 860px;
             margin: 0 auto;
         }
 
-        h1,
-        h2 {
-            color: #00FFCC;
-            font-family: monospace;
+        .top-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            color: var(--mint);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .top-link:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 34px 24px 28px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border-strong);
+            background: var(--mint-soft);
+            color: var(--mint);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
         h1 {
-            border-bottom: 1px solid #1A1A1A;
-            padding-bottom: 20px;
-            font-size: 1.8rem;
+            margin: 0 0 10px;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+
+        .updated {
+            color: var(--soft);
+            font-size: 0.92rem;
+            margin-bottom: 24px;
+        }
+
+        p {
+            margin: 0 0 16px;
+            color: var(--muted);
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+
+        strong {
+            color: var(--text);
         }
 
         h2 {
-            margin-top: 40px;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #00FFCC;
-            text-decoration: none;
-            font-family: monospace;
-            font-size: 0.8rem;
+            margin: 34px 0 12px;
+            font-size: 1.02rem;
+            color: var(--mint);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .warning {
-            border: 1px solid #CC3333;
-            padding: 20px;
-            border-radius: 12px;
-            color: #FF9999;
-            font-size: 0.9rem;
-            margin-top: 20px;
+            margin-top: 24px;
+            padding: 18px;
+            border-radius: 18px;
+            border: 1px solid rgba(244, 190, 98, 0.28);
+            background: var(--warn-bg);
+            color: #f3d8a4;
         }
 
-        .footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            font-family: monospace;
+        .warning p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact {
+            margin-top: 34px;
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        .contact a {
+            color: var(--mint);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 26px 18px 22px;
+                border-radius: 24px;
+            }
+
+            p {
+                font-size: 0.96rem;
+            }
         }
     </style>
-
 </head>
 
 <body>
+    <main class="page">
+        <a class="top-link" href="index.html">← Voltar</a>
 
-    <a href="index.html" class="back-link">← VOLTAR</a>
+        <section class="card">
+            <div class="eyebrow">Kest Terms</div>
+            <h1>Termos de Uso</h1>
+            <div class="updated">Última atualização: Abril de 2026</div>
 
-    <h1>Terms of Service_</h1>
+            <h2>1. Aceitação dos termos</h2>
+            <p>
+                Ao utilizar o aplicativo <strong>Kest</strong>, o usuário declara ter lido, compreendido
+                e concordado com estes Termos de Uso. Caso não concorde com qualquer disposição,
+                recomenda-se não utilizar o aplicativo.
+            </p>
 
-    <p>Última atualização: Março de 2026</p>
+            <h2>2. Descrição do serviço</h2>
+            <p>
+                O Kest é um aplicativo voltado ao acompanhamento de gastos recorrentes, assinaturas,
+                períodos de teste, lembretes financeiros, projeções e análises baseadas nos dados
+                inseridos pelo próprio usuário.
+            </p>
+            <p>
+                O objetivo do aplicativo é oferecer clareza, organização e apoio visual à tomada de decisão,
+                sem substituir a revisão do usuário sobre suas próprias finanças.
+            </p>
 
-    <h2>1. Aceitação dos Termos</h2>
+            <h2>3. Licença de uso</h2>
+            <p>
+                O Kest concede ao usuário uma licença limitada, pessoal, não exclusiva, revogável
+                e intransferível para utilização do aplicativo em conformidade com estes Termos
+                e com as regras da plataforma de distribuição aplicável.
+            </p>
 
-    <p>
-        Ao utilizar o aplicativo Kest, o usuário concorda com estes Termos de Uso.
-        Caso não concorde com qualquer parte destes termos, o uso do aplicativo não é recomendado.
-    </p>
+            <h2>4. Responsabilidade sobre dados inseridos</h2>
+            <p>
+                O usuário é responsável pela veracidade, atualização e consistência dos dados
+                cadastrados no aplicativo, incluindo valores, datas, ciclos de cobrança,
+                períodos de teste e demais informações utilizadas nas análises exibidas.
+            </p>
+            <p>
+                Alertas, projeções, lembretes e insights dependem da qualidade dos dados informados.
+                Informações incorretas, incompletas ou desatualizadas podem comprometer a utilidade dos resultados.
+            </p>
 
-    <h2>2. Descrição do Serviço</h2>
+            <h2>5. Notificações e lembretes</h2>
+            <p>
+                O Kest pode disponibilizar alertas e notificações relacionadas a vencimentos,
+                testes terminando, cobranças próximas e lembretes do aplicativo.
+            </p>
+            <p>
+                O funcionamento desses avisos depende, entre outros fatores:
+            </p>
+            <p>
+                da permissão de notificações concedida pelo usuário, das configurações do sistema operacional,
+                do funcionamento do dispositivo e da precisão dos dados cadastrados no app.
+            </p>
 
-    <p>
-        O Kest é uma ferramenta de organização pessoal projetada para ajudar usuários
-        a gerenciar assinaturas e despesas recorrentes.
-    </p>
+            <h2>6. Backup, importação e exportação</h2>
+            <p>
+                O aplicativo pode oferecer recursos de exportação, importação e compartilhamento de backup local.
+                O usuário é responsável por verificar a integridade, o armazenamento, o envio e a proteção
+                dos arquivos gerados ou importados.
+            </p>
+            <p>
+                O desenvolvedor não garante recuperação de dados perdidos fora das possibilidades técnicas
+                disponíveis no próprio aplicativo e no dispositivo do usuário.
+            </p>
 
-    <h2>3. Licença de Uso</h2>
+            <h2>7. Recursos de segurança</h2>
+            <p>
+                O Kest pode oferecer recursos de proteção de acesso ao aplicativo, inclusive com apoio
+                de mecanismos nativos do sistema operacional do dispositivo.
+            </p>
+            <p>
+                Tais recursos ajudam a restringir o acesso local ao app, mas não substituem
+                a necessidade de o usuário manter o aparelho adequadamente protegido por senha,
+                bloqueio de tela, biometria e demais mecanismos de segurança do sistema.
+            </p>
 
-    <p>
-        O Kest concede ao usuário uma licença limitada, não exclusiva e não transferível
-        para utilizar o aplicativo exclusivamente para fins pessoais.
-    </p>
+            <h2>8. Recursos premium e compras no app</h2>
+            <p>
+                O Kest pode oferecer funcionalidades premium mediante compras dentro do aplicativo.
+                Essas transações são processadas pelas plataformas oficiais, como Google Play
+                ou App Store, conforme os termos e políticas dessas lojas.
+            </p>
+            <p>
+                Questões relacionadas a cobrança, renovação, cancelamento, reembolso e gestão
+                de assinatura podem depender das regras da plataforma utilizada pelo usuário.
+            </p>
 
-    <h2>4. Responsabilidade do Usuário</h2>
+            <h2>9. Isenção de consultoria financeira</h2>
+            <p>
+                O Kest <strong>não oferece consultoria financeira, contábil, tributária, jurídica ou de investimento</strong>.
+                As informações exibidas no aplicativo são geradas a partir dos dados fornecidos pelo usuário
+                e têm caráter informativo e organizacional.
+            </p>
 
-    <p>
-        O usuário é responsável por inserir informações corretas e manter
-        backup de seus dados caso utilize recursos de exportação disponíveis.
-    </p>
+            <div class="warning">
+                <p>
+                    <strong>Importante:</strong> o usuário continua responsável por verificar cobranças,
+                    vencimentos, cancelamentos, condições de períodos de teste, reajustes, renovações e demais
+                    obrigações relacionadas a serviços de terceiros.
+                </p>
+            </div>
 
-    <h2>5. Compras dentro do Aplicativo</h2>
+            <h2>10. Limitação de responsabilidade</h2>
+            <p>
+                O aplicativo é fornecido “como está”, dentro dos limites permitidos pela legislação aplicável.
+                Embora haja esforço para manter boa experiência de uso, o desenvolvedor não garante
+                funcionamento ininterrupto, ausência total de falhas, compatibilidade universal
+                com todos os dispositivos ou disponibilidade contínua de recursos.
+            </p>
+            <p>
+                Na máxima extensão permitida por lei, o desenvolvedor não se responsabiliza por prejuízos
+                decorrentes de dados incorretos inseridos pelo usuário, uso indevido do aplicativo,
+                falhas do sistema operacional, indisponibilidade de notificações, perda de backups,
+                cobranças de terceiros ou esquecimentos de cancelamento.
+            </p>
 
-    <p>
-        Recursos premium podem ser disponibilizados através de compras dentro do aplicativo.
-        Essas transações são processadas pelas plataformas Google Play ou Apple App Store,
-        de acordo com os termos dessas plataformas.
-    </p>
+            <h2>11. Alterações destes termos</h2>
+            <p>
+                Estes Termos de Uso podem ser atualizados periodicamente. A versão mais recente
+                permanecerá disponível nesta página, acompanhada da respectiva data de atualização.
+            </p>
 
-    <h2>6. Isenção de Consultoria Financeira</h2>
+            <h2>12. Jurisdição e contato</h2>
+            <p>
+                Estes Termos serão interpretados conforme a legislação aplicável ao desenvolvedor,
+                sem prejuízo de normas obrigatórias eventualmente aplicáveis ao consumidor em sua jurisdição.
+            </p>
 
-    <p>
-        O Kest não fornece aconselhamento financeiro, contábil ou jurídico.
-        Todas as informações exibidas são baseadas exclusivamente nos dados inseridos pelo usuário.
-    </p>
-
-    <div class="warning">
-
-        O desenvolvedor não se responsabiliza por perdas financeiras,
-        cobranças de serviços de terceiros ou cancelamentos esquecidos de assinaturas.
-
-    </div>
-
-    <h2>7. Limitação de Responsabilidade</h2>
-
-    <p>
-        O uso do aplicativo é fornecido "como está".
-        O desenvolvedor não garante disponibilidade contínua ou ausência de erros.
-    </p>
-
-    <h2>8. Alterações nos Termos</h2>
-
-    <p>
-        Estes Termos podem ser atualizados periodicamente.
-        A versão mais recente estará sempre disponível nesta página.
-    </p>
-
-    <h2>9. Jurisdição</h2>
-
-    <p>
-        Estes termos são regidos pelas leis aplicáveis do país de residência do desenvolvedor.
-    </p>
-
-    <div class="footer">
-
-        TouchApps IT
-        Contato: touchapps.it@gmail.com
-
-    </div>
-
+            <div class="contact">
+                <strong>Contato oficial</strong><br />
+                Para dúvidas legais, suporte ou solicitações relacionadas a estes Termos:
+                <a href="mailto:touchapps.it@gmail.com">touchapps.it@gmail.com</a>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
